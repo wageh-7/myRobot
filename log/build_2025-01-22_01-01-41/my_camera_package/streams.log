@@ -1,0 +1,27 @@
+[0.640s] Invoking command in '/home/wageh/test/src/my_camera_package': PYTHONPATH=/home/wageh/test/build/my_camera_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wageh/test/install/my_camera_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_camera_package build --build-base /home/wageh/test/build/my_camera_package/build install --record /home/wageh/test/build/my_camera_package/install.log --single-version-externally-managed install_data
+[0.731s] /home/wageh/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[0.731s]   warnings.warn(msg)
+[0.775s] running egg_info
+[0.782s] writing ../../build/my_camera_package/my_camera_package.egg-info/PKG-INFO
+[0.782s] writing dependency_links to ../../build/my_camera_package/my_camera_package.egg-info/dependency_links.txt
+[0.783s] writing entry points to ../../build/my_camera_package/my_camera_package.egg-info/entry_points.txt
+[0.783s] writing requirements to ../../build/my_camera_package/my_camera_package.egg-info/requires.txt
+[0.783s] writing top-level names to ../../build/my_camera_package/my_camera_package.egg-info/top_level.txt
+[0.798s] reading manifest file '../../build/my_camera_package/my_camera_package.egg-info/SOURCES.txt'
+[0.799s] writing manifest file '../../build/my_camera_package/my_camera_package.egg-info/SOURCES.txt'
+[0.799s] running build
+[0.799s] running build_py
+[0.799s] copying my_camera_package/camera_node.py -> /home/wageh/test/build/my_camera_package/build/lib/my_camera_package
+[0.800s] copying my_camera_package/__init__.py -> /home/wageh/test/build/my_camera_package/build/lib/my_camera_package
+[0.800s] running install
+[0.802s] running install_lib
+[0.810s] running install_data
+[0.810s] copying resource/my_camera_package -> /home/wageh/test/install/my_camera_package/share/ament_index/resource_index/packages
+[0.810s] copying package.xml -> /home/wageh/test/install/my_camera_package/share/my_camera_package
+[0.810s] running install_egg_info
+[0.818s] removing '/home/wageh/test/install/my_camera_package/lib/python3.10/site-packages/my_camera_package-0.0.0-py3.10.egg-info' (and everything under it)
+[0.818s] Copying ../../build/my_camera_package/my_camera_package.egg-info to /home/wageh/test/install/my_camera_package/lib/python3.10/site-packages/my_camera_package-0.0.0-py3.10.egg-info
+[0.818s] running install_scripts
+[0.883s] Installing camera_node script to /home/wageh/test/install/my_camera_package/lib/my_camera_package
+[0.883s] writing list of installed files to '/home/wageh/test/build/my_camera_package/install.log'
+[0.906s] Invoked command in '/home/wageh/test/src/my_camera_package' returned '0': PYTHONPATH=/home/wageh/test/build/my_camera_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wageh/test/install/my_camera_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_camera_package build --build-base /home/wageh/test/build/my_camera_package/build install --record /home/wageh/test/build/my_camera_package/install.log --single-version-externally-managed install_data

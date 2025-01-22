@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Assem1">
+<link name="base_footprint">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <box size="0.001 0.001 0.001" />
+        </geometry>
+    </visual>
+</link>
+
+<joint name="base_footprint_joint" type="fixed">
+    <origin xyz="0 0 0.001" rpy="0 0 0" />
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+</joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0262600175323087 0.0205990903034334 -0.0250318418057986"
+        rpy="0 0 0" />
+      <mass
+        value="69.7730199307781" />
+      <inertia
+        ixx="1.68522996892855"
+        ixy="5.97080928296804E-17"
+        ixz="2.31084705226761E-16"
+        iyy="4.29869582705487"
+        iyz="-2.98111657658923E-18"
+        izz="3.07671663220099" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="lider">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 0.00584624129600686"
+        rpy="0 0 0" />
+      <mass
+        value="0.0663221625099341" />
+      <inertia
+        ixx="1.67516345884653E-05"
+        ixy="-4.6410346901642E-22"
+        ixz="-7.81376979581962E-23"
+        iyy="1.67516345884653E-05"
+        iyz="-1.28593575828615E-22"
+        izz="2.13804528084009E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/lider.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/lider.STL" />
+      </geometry>
+    </collision>
+  </link>
+   <!-- Lider  (hokuyo) plugin -->
+    <gazebo reference="lider">
+    <sensor type="gpu_ray" name="lider_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="laser_plugin" filename="libgazebo_ros_laser.so">
+        <topicName>scan</topicName>
+        <frameName>laser_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
+  <joint
+    name="fixed2"
+    type="fixed">
+    <origin
+      xyz="-0.29675 0.025881 0.12982"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="lider" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="-0.0140979329098563 -0.00010714159487684 0.000125975069926718"
+        rpy="0 0 0" />
+      <mass
+        value="0.0442610031818635" />
+      <inertia
+        ixx="5.78657786510939E-05"
+        ixy="-1.9877113406294E-08"
+        ixz="-2.70700189278751E-08"
+        iyy="3.82453075888933E-06"
+        iyz="1.95345001437617E-08"
+        izz="5.48822484084664E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <!-- camera plugin -->
+  <gazebo reference="camera">
+  <sensor name="camera_camera" type="depth">
+    <update_rate>20</update_rate>
+    <camera>
+      <horizontal_fov>1.047198</horizontal_fov>
+      <image>
+        <width>640</width>
+        <height>480</height>
+        <format>R8G8B8</format>
+      </image>
+      <clip>
+        <near>0.05</near>
+        <far>3</far>
+      </clip>
+    </camera>
+    <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
+      <baseline>0.2</baseline>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>1.0</updateRate>
+      <cameraName>camera_ir</cameraName>
+      <imageTopicName>/camera/color/image_raw</imageTopicName>
+      <cameraInfoTopicName>/camera/color/camera_info</cameraInfoTopicName>
+      <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
+      <depthImageInfoTopicName>/camera/depth/camera_info</depthImageInfoTopicName>
+      <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
+      <frameName>camera_frame</frameName>
+      <pointCloudCutoff>0.5</pointCloudCutoff>
+      <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+      <distortionK1>0.00000001</distortionK1>
+      <distortionK2>0.00000001</distortionK2>
+      <distortionK3>0.00000001</distortionK3>
+      <distortionT1>0.00000001</distortionT1>
+      <distortionT2>0.00000001</distortionT2>
+      <CxPrime>0</CxPrime>
+      <Cx>0</Cx>
+      <Cy>0</Cy>
+      <focalLength>0</focalLength>
+      <hackBaseline>0</hackBaseline>
+    </plugin>
+  </sensor>
+</gazebo>
+
+  <joint
+    name="fixed1"
+    type="fixed">
+    <origin
+      xyz="-0.34964 0.025795 0.10936"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="tire1">
+    <inertial>
+      <origin
+        xyz="-4.77962771797125E-06 -5.08229193769971E-06 -0.000493852908781567"
+        rpy="0 0 0" />
+      <mass
+        value="1.21020265339321" />
+      <inertia
+        ixx="0.00234032407514317"
+        ixy="2.10977653273689E-08"
+        ixz="-3.32633850155205E-07"
+        iyy="0.00234032666756292"
+        iyz="-3.53697491646658E-07"
+        izz="0.00398998833058309" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/tire1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/tire1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shaft1"
+    type="continuous">
+    <origin
+      xyz="-0.21524 0.31103 -0.066182"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="tire1" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="tire2">
+    <inertial>
+      <origin
+        xyz="5.74075823156495E-06 -3.96462197299607E-06 -0.000493852908781567"
+        rpy="0 0 0" />
+      <mass
+        value="1.21020265339321" />
+      <inertia
+        ixx="0.00234033285721159"
+        ixy="-1.97675942839872E-08"
+        ixz="3.99522855348127E-07"
+        iyy="0.00234031788549451"
+        iyz="-2.75914265525859E-07"
+        izz="0.00398998833058309" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/tire2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/tire2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shaft2"
+    type="continuous">
+    <origin
+      xyz="0.26776 0.31103 -0.066182"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="tire2" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="tire3">
+    <inertial>
+      <origin
+        xyz="6.14638628318454E-06 -3.30097987269462E-06 0.000493852908781622"
+        rpy="0 0 0" />
+      <mass
+        value="1.21020265339321" />
+      <inertia
+        ixx="0.00234033704503444"
+        ixy="-1.76216067569403E-08"
+        ixz="-4.27752171208182E-07"
+        iyy="0.00234031369767166"
+        iyz="2.29728696276778E-07"
+        izz="0.00398998833058309" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/tire3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/tire3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shaft3"
+    type="continuous">
+    <origin
+      xyz="-0.21524 -0.26097 -0.066182"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="tire3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="tire4">
+    <inertial>
+      <origin
+        xyz="-4.55379208896822E-06 -5.28559458082278E-06 0.000493852908781622"
+        rpy="0 0 0" />
+      <mass
+        value="1.21020265339321" />
+      <inertia
+        ixx="0.00234032224444799"
+        ixy="2.09049832967625E-08"
+        ixz="3.16917024659571E-07"
+        iyy="0.0023403284982581"
+        iyz="3.67846154454689E-07"
+        izz="0.00398998833058308" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/tire4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot/meshes/visual/tire4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shaft4"
+    type="continuous">
+    <origin
+      xyz="0.26776 -0.26097 -0.066182"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="tire4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+ <!--Differential Drive-->
+<gazebo>
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+
+    <!-- Plugin update rate in Hz -->
+    <updateRate>50</updateRate>
+
+    <!-- Name of left joint, defaults to `left_joint` -->
+    <leftJoint>shaft2</leftJoint>
+
+    <!-- Name of right joint, defaults to `right_joint` -->
+    <rightJoint>shaft4</rightJoint>
+
+    <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
+    <wheelSeparation>0.5380</wheelSeparation>
+
+    <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
+    <wheelDiameter>0.16</wheelDiameter>
+
+    <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
+    <wheelAcceleration>1.0</wheelAcceleration>
+
+    <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
+    <wheelTorque>20</wheelTorque>
+
+    <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
+    <commandTopic>cmd_vel</commandTopic>
+
+    <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
+    <odometryTopic>odom</odometryTopic>
+
+    <!-- Odometry frame, defaults to `odom` -->
+    <odometryFrame>odom</odometryFrame>
+
+    <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
+    <robotBaseFrame>base_footprint</robotBaseFrame>
+
+    <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
+    <odometrySource>1</odometrySource>
+
+    <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+    <publishWheelTF>true</publishWheelTF>
+
+    <!-- Set to true to publish transforms for the odometry, defaults to true -->
+    <publishOdom>true</publishOdom>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
+    <publishWheelJointState>true</publishWheelJointState>
+
+    <!-- Set to true to swap right and left wheels, defaults to true -->
+    <legacyMode>false</legacyMode>
+  </plugin>
+</gazebo>
+
+</robot>
+

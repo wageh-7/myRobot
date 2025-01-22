@@ -1,0 +1,42 @@
+[0.684s] Invoking command in '/home/wageh/test/src/my_robot': PYTHONPATH=/home/wageh/test/build/my_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wageh/test/install/my_robot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_robot build --build-base /home/wageh/test/build/my_robot/build install --record /home/wageh/test/build/my_robot/install.log --single-version-externally-managed install_data
+[0.784s] /home/wageh/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[0.784s]   warnings.warn(msg)
+[0.832s] running egg_info
+[0.839s] writing ../../build/my_robot/my_robot.egg-info/PKG-INFO
+[0.840s] writing dependency_links to ../../build/my_robot/my_robot.egg-info/dependency_links.txt
+[0.840s] writing requirements to ../../build/my_robot/my_robot.egg-info/requires.txt
+[0.840s] writing top-level names to ../../build/my_robot/my_robot.egg-info/top_level.txt
+[0.857s] reading manifest file '../../build/my_robot/my_robot.egg-info/SOURCES.txt'
+[0.858s] writing manifest file '../../build/my_robot/my_robot.egg-info/SOURCES.txt'
+[0.859s] running build
+[0.859s] running build_py
+[0.859s] copying my_robot/__init__.py -> /home/wageh/test/build/my_robot/build/lib/my_robot
+[0.859s] running install
+[0.862s] running install_lib
+[0.870s] running install_data
+[0.870s] copying resource/my_robot -> /home/wageh/test/install/my_robot/share/ament_index/resource_index/packages
+[0.871s] copying package.xml -> /home/wageh/test/install/my_robot/share/my_robot
+[0.871s] copying launch/gz_simulator_launch.py -> /home/wageh/test/install/my_robot/share/my_robot
+[0.871s] copying launch/launch.py -> /home/wageh/test/install/my_robot/share/my_robot
+[0.871s] copying urdf/Assem1.urdf -> /home/wageh/test/install/my_robot/share/my_robot/urdf
+[0.871s] copying world/depot.sdf -> /home/wageh/test/install/my_robot/share/my_robot/world
+[0.871s] copying meshes/collision/tire4.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/collision
+[0.871s] copying meshes/collision/camera.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/collision
+[0.873s] copying meshes/collision/lider.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/collision
+[0.873s] copying meshes/collision/tire1.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/collision
+[0.873s] copying meshes/collision/tire3.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/collision
+[0.873s] copying meshes/collision/base_link.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/collision
+[0.873s] copying meshes/collision/tire2.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/collision
+[0.873s] copying meshes/visual/tire4.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/visual
+[0.873s] copying meshes/visual/camera.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/visual
+[0.874s] copying meshes/visual/lider.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/visual
+[0.874s] copying meshes/visual/tire1.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/visual
+[0.875s] copying meshes/visual/tire3.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/visual
+[0.875s] copying meshes/visual/base_link.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/visual
+[0.875s] copying meshes/visual/tire2.STL -> /home/wageh/test/install/my_robot/share/my_robot/meshes/visual
+[0.875s] running install_egg_info
+[0.884s] removing '/home/wageh/test/install/my_robot/lib/python3.10/site-packages/my_robot-0.0.0-py3.10.egg-info' (and everything under it)
+[0.884s] Copying ../../build/my_robot/my_robot.egg-info to /home/wageh/test/install/my_robot/lib/python3.10/site-packages/my_robot-0.0.0-py3.10.egg-info
+[0.884s] running install_scripts
+[0.955s] writing list of installed files to '/home/wageh/test/build/my_robot/install.log'
+[0.983s] Invoked command in '/home/wageh/test/src/my_robot' returned '0': PYTHONPATH=/home/wageh/test/build/my_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wageh/test/install/my_robot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/my_robot build --build-base /home/wageh/test/build/my_robot/build install --record /home/wageh/test/build/my_robot/install.log --single-version-externally-managed install_data

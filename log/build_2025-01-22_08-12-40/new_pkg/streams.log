@@ -1,0 +1,30 @@
+[0.906s] Invoking command in '/home/wageh/test/src/new_pkg': PYTHONPATH=/home/wageh/test/build/new_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wageh/test/install/new_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/new_pkg build --build-base /home/wageh/test/build/new_pkg/build install --record /home/wageh/test/build/new_pkg/install.log --single-version-externally-managed install_data
+[1.000s] /home/wageh/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[1.000s]   warnings.warn(msg)
+[1.044s] running egg_info
+[1.051s] creating ../../build/new_pkg/new_pkg.egg-info
+[1.051s] writing ../../build/new_pkg/new_pkg.egg-info/PKG-INFO
+[1.052s] writing dependency_links to ../../build/new_pkg/new_pkg.egg-info/dependency_links.txt
+[1.052s] writing requirements to ../../build/new_pkg/new_pkg.egg-info/requires.txt
+[1.052s] writing top-level names to ../../build/new_pkg/new_pkg.egg-info/top_level.txt
+[1.052s] writing manifest file '../../build/new_pkg/new_pkg.egg-info/SOURCES.txt'
+[1.067s] reading manifest file '../../build/new_pkg/new_pkg.egg-info/SOURCES.txt'
+[1.068s] writing manifest file '../../build/new_pkg/new_pkg.egg-info/SOURCES.txt'
+[1.068s] running build
+[1.068s] running build_py
+[1.068s] creating /home/wageh/test/build/new_pkg/build/lib/new_pkg
+[1.068s] copying new_pkg/__init__.py -> /home/wageh/test/build/new_pkg/build/lib/new_pkg
+[1.068s] running install
+[1.071s] running install_lib
+[1.078s] creating /home/wageh/test/install/new_pkg/lib/python3.10/site-packages/new_pkg
+[1.079s] copying /home/wageh/test/build/new_pkg/build/lib/new_pkg/__init__.py -> /home/wageh/test/install/new_pkg/lib/python3.10/site-packages/new_pkg
+[1.079s] byte-compiling /home/wageh/test/install/new_pkg/lib/python3.10/site-packages/new_pkg/__init__.py to __init__.cpython-310.pyc
+[1.079s] running install_data
+[1.079s] creating /home/wageh/test/install/new_pkg/share/ament_index/resource_index/packages
+[1.079s] copying resource/new_pkg -> /home/wageh/test/install/new_pkg/share/ament_index/resource_index/packages
+[1.079s] copying package.xml -> /home/wageh/test/install/new_pkg/share/new_pkg
+[1.079s] running install_egg_info
+[1.087s] Copying ../../build/new_pkg/new_pkg.egg-info to /home/wageh/test/install/new_pkg/lib/python3.10/site-packages/new_pkg-0.0.0-py3.10.egg-info
+[1.088s] running install_scripts
+[1.153s] writing list of installed files to '/home/wageh/test/build/new_pkg/install.log'
+[1.178s] Invoked command in '/home/wageh/test/src/new_pkg' returned '0': PYTHONPATH=/home/wageh/test/build/new_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wageh/test/install/new_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/new_pkg build --build-base /home/wageh/test/build/new_pkg/build install --record /home/wageh/test/build/new_pkg/install.log --single-version-externally-managed install_data

@@ -1,0 +1,2 @@
+[console_scripts]
+lider_node = my_laser_package.lider_node:main
